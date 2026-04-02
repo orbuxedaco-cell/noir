@@ -1,0 +1,86 @@
+<!-- CONTACT -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oriol Buxeda - Web Developer</title>
+
+<link rel="stylesheet" href="css/portfolio.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="container">
+
+    <div class="menu-header">
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="portfolio.html">Inicio</a>
+      <a href="contactame.html">Servicios</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+  </div>
+</nav>
+<section class="contact">
+  <div class="contact-container">
+
+    <h2 class="contact-title">¿Hablamos?</h2>
+    <p class="contact-subtitle">
+      Cuéntame tu idea y lo hacemos realidad.
+    </p>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <div class="contact-info">
+      <p>📧 orbuxedaco@gmail.com</p>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+
+    <p class="availability">🟢 Disponible para proyectos freelance</p>
+
+  </div>
+</section>
+<!-- JS -->
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

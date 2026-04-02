@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oriol Buxeda - Web Developer</title>
+
+<link rel="stylesheet" href="css/portfolio.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+
+    <div class="menu-header">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="portfolio.html">Inicio</a>
+      <a href="contactame.html">Servicios</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- PROYECTO -->
+<section class="proyecto-noir">
+
+  <h2 class="titulo-proyecto">
+    WEB NOIR — MARCA DE MODA
+  </h2>
+
+  <div class="videos-container">
+
+    <div class="video-block">
+      <p>Página web formato Desktop</p>
+      <video class="video-noir" controls playsinline>
+        <source src="ASSETS/videos/DESKTOP.mp4">
+      </video>
+    </div>
+
+    <div class="video-block">
+      <p>Formato mobile / tablet</p>
+      <video class="video-noir" controls playsinline>
+        <source src="ASSETS/videos/RESPONSIVE.mp4">
+      </video>
+    </div>
+
+  </div>
+
+</section>
+<section class="galeria-mini">
+
+  <div class="item">
+    <p>Main</p>
+    <img src="ASSETS/img/Screenshot 2026-04-02 at 00-03-39 NOIR.png" alt="Proyecto 1">
+    
+  </div>
+
+  <div class="item">
+    <p>Colecciones</p>
+    <img src="ASSETS/img/Screenshot 2026-04-02 at 00-04-06 Colecciones NOIR.png" alt="Proyecto 2">
+    
+  </div>
+
+  <div class="item">
+    <p>About</p>
+    <img src="ASSETS/img/Screenshot 2026-04-02 at 00-04-17 NOIR.png" alt="Proyecto 3">
+    
+  </div>
+
+  <div class="item">
+    <p>Contactanos</p>
+    <img src="ASSETS/img/Screenshot 2026-04-02 at 00-04-32 NOIR.png" alt="Proyecto 4">
+   
+  </div>
+
+  <div class="item">
+    <p>Man</p>
+    <img src="ASSETS/img/Screenshot 2026-04-02 at 00-04-50 NOIR - MAN.png" alt="Proyecto 5">
+    
+  </div>
+
+</section>
+<section class="proyecto-noir">
+
+  <h2 class="titulo-proyecto">
+    WEB DIVULGATIVA SOBRE SIX ENIAC
+  </h2>
+
+  <div class="videos-container">
+
+    <div class="video-block">
+      <p>Página web sobre las Six Eniac Desktop</p>
+      <video class="video-noir" controls playsinline>
+        <source src="ASSETS/videos/ENIAC Six — Mozilla Firefox 2026-04-01 23-40-09.mp4">
+      </video>
+    </div>
+
+
+    <div class="video-block">
+      <p>Formato mobile / tablet</p>
+      <video class="video-noir" controls playsinline>
+        <source src="ASSETS/videos/ENIAC Six — Mozilla Firefox 2026-04-01 23-43-10.mp4">
+      </video>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- JS -->
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+// 🔒 BLOQUEAR VOLUMEN SIEMPRE
+const videos = document.querySelectorAll(".video-noir");
+
+videos.forEach(video => {
+  video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+  });
+  });
+  
+</script>
+
+</body>
+</html>

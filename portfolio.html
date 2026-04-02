@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oriol Buxeda - Web Developer</title>
+
+<link rel="stylesheet" href="css/portfolio.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="container">
+
+    <div class="menu-header">
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="contactame.html">Servicios</a>
+      <a href="sobremi.html">Sobre mí</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contactame.html">Contacto</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section id="inicio" class="hero">
+  <div class="container">
+
+    <!-- FILA SUPERIOR -->
+    <div class="hero-top">
+
+      <div class="hero-text">
+        
+        <h2 class="hero-title"><span>Oriol <span class="gradient-text">Buxeda</span></span>
+  <span>Web <span class="gradient-text">Developer</span></span>
+</h2>
+        
+        
+
+        <p>
+          Hola, soy desarrollador web especializado en crear páginas modernas, claras y funcionales. Me enfoco en diseñar experiencias simples pero bien pensadas, utilizando HTML, CSS y JavaScript para construir interfaces limpias, rápidas y adaptadas a cualquier dispositivo.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img src="ASSETS/img/iggy.png" alt="Oriol">
+      </div>
+
+    </div>
+
+    <!-- FILA INFERIOR -->
+    <div class="hero-bottom">
+
+      <button><a href="proyectos.html">Proyectos</a></button>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/oriol-buxeda-cornet-7993b8302/"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/oriolbuxeda"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- JS -->
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
