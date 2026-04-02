@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>NOIR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/webparaportfolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+ <script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+<body>
+    <div class="flash" id="flash"></div>
+    
+
+  <header class="header">
+  <div class="logo">NOIR</div>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="#">Inicio</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="sobrenosotros.html">Sobre nosotros</a>
+    <a href="contactanos.html">Contáctanos</a>
+  </nav>
+</header>
+
+  <!-- HERO -->
+    <div class="mobile-hero">
+    <video autoplay muted loop playsinline>
+        <source src="assets/videos/zara.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay">NOIR</div>
+    </div>
+  <main class="hero">
+
+  <div class="collage">
+
+ <img src="assets/img/img1.jpg">
+<img src="assets/img/img2.jpg">
+<img src="assets/img/img3.jpg">
+<img src="assets/img/img4.jpg">
+
+<img src="assets/img/img5.jpg">
+
+<div class="center">NOIR</div>
+
+<img src="assets/img/img6.jpg">
+
+<img src="assets/img/img7.jpg">
+<img src="assets/img/img8.jpg">
+<img src="assets/img/img9.jpg">
+<img src="assets/img/img10.jpg">
+<img src="assets/img/img11.jpg">
+<img src="assets/img/img12.jpg">
+<img src="assets/img/img13.jpg">
+<img src="assets/img/img14.jpg">
+
+</div>
+
+
+</main>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>NOIR</h3>
+      <p>Contemporary clothing designed for movement and urban life.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="webparaportf.html">Inicio</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="#">Sobre nosotros</a>
+      <a href="contactanos.html">Contacto</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <a href="#">Man</a>
+      <a href="#">Woman</a>
+      <a href="#">Kids</a>
+      <a href="#">New In</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>info@noir.com</p>
+      <p>+34 600 000 000</p>
+      <p>Madrid</p>
+    </div>
+
+  </div>
+  <div class="footer-social">
+
+ <a href="https://www.linkedin.com/in/oriol-buxeda-cornet-7993b8302/"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/oriolbuxeda"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+</div>
+
+  <div class="footer-bottom">
+    <p>© 2026 NOIR</p>
+  </div>
+
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================
+     🔥 COLLAGE + RANDOM FLASH
+  ========================= */
+
+  const images = Array.from(document.querySelectorAll(".collage img"));
+  const flash = document.getElementById("flash");
+
+  const basePath = "assets/img/";
+
+  let usedImages = [];
+  const MAX_HISTORY = 6;
+
+  function randomFlash() {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const img = images[randomIndex];
+
+    // flash blanco
+    flash.classList.add("active");
+    img.style.filter = "brightness(1.8)";
+
+    setTimeout(() => {
+      let randomNumber;
+
+      do {
+        randomNumber = Math.floor(Math.random() * 28) + 1;
+      } while (usedImages.includes(randomNumber));
+
+      usedImages.push(randomNumber);
+      if (usedImages.length > MAX_HISTORY) usedImages.shift();
+
+      // 🔥 AQUÍ ESTÁ EL CAMBIO IMPORTANTE
+      img.src = basePath + "img" + randomNumber + ".jpg";
+    }, 150);
+
+    setTimeout(() => {
+      img.style.filter = "grayscale(100%)";
+    }, 300);
+
+    setTimeout(() => {
+      flash.classList.remove("active");
+    }, 400);
+  }
+
+  // cada 1s
+  setInterval(randomFlash, 1000);
+
+  /* =========================
+     🎲 RANDOM ORDEN IMÁGENES
+  ========================= */
+
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  images.forEach((img, index) => {
+    img.style.animationDelay = (index * 0.1) + "s";
+  });
+
+  /* =========================
+     🖤 LOGO NOIR
+  ========================= */
+
+  const center = document.querySelector(".center");
+
+  setTimeout(() => {
+    center.classList.add("show");
+  }, 2200);
+
+});
+</script>
+ 
+
+</body>
+
+</html>

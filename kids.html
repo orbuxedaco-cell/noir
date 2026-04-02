@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR - KIDS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/webparaportfolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">NOIR</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html">Inicio</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="sobrenosotros.html">Sobre nosotros</a>
+    <a href="contactanos.html">Contáctanos</a>
+  </nav>
+</header>
+
+<!-- SIDE VIDEOS -->
+<div class="side-video left">
+  <video autoplay muted loop>
+    <source src="peterlindbergh.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="side-video right">
+  <video autoplay muted loop>
+    <source src="peterlindbergh.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- CONTENIDO -->
+<main class="category-page">
+
+  <!-- SWITCH ARRIBA IZQUIERDA -->
+  <div class="category-switch-top">
+    <a href="woman.html">WOMAN</a>
+    <a href="man.html">MAN</a>
+  </div>
+
+  <!-- TITULO -->
+  <h1 class="title">KIDS</h1>
+
+  <!-- BOTONES -->
+  <div class="category-menu">
+    <button class="category-btn" onclick="selectCategory(this); showCategory(pants)">
+      PANTALONES
+    </button>
+
+    <button class="category-btn" onclick="selectCategory(this); showCategory(tops)">
+      CAMISETAS / JERSEIS
+    </button>
+
+    <button class="category-btn" onclick="selectCategory(this); showCategory(jackets)">
+      CHAQUETAS
+    </button>
+  </div>
+
+  <!-- VIEWER -->
+  <div id="viewer" class="hidden">
+
+    <div class="product-card">
+
+      <button class="arrow left" onclick="prev()">←</button>
+
+      <div class="image">
+        <img id="product-img" src="kidspants1.jpg" alt="producto">
+      </div>
+
+      <div class="info">
+        <h2 id="product-name">Kids Pants</h2>
+        <p id="product-price">40€</p>
+
+        <div class="sizes">
+          <span class="size">S</span>
+          <span class="size">M</span>
+          <span class="size">L</span>
+        </div>
+
+        <button class="buy">Comprar</button>
+      </div>
+
+      <button class="arrow right" onclick="next()">→</button>
+
+    </div>
+
+  </div>
+
+</main>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>NOIR</h3>
+      <p>Contemporary clothing designed for movement and urban life.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Inicio</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="#">Sobre nosotros</a>
+      <a href="contactanos.html">Contacto</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <a href="#">Man</a>
+      <a href="#">Woman</a>
+      <a href="#">Kids</a>
+      <a href="#">New In</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>info@noir.com</p>
+      <p>+34 600 000 000</p>
+      <p>Madrid</p>
+    </div>
+
+  </div>
+  <div class="footer-social">
+
+  <a href="https://www.linkedin.com/in/oriol-buxeda-cornet-7993b8302/"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/oriolbuxeda"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+</div>
+
+  <div class="footer-bottom">
+    <p>© 2026 NOIR</p>
+  </div>
+
+</footer>
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+
+function selectCategory(button) {
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  button.classList.add('active');
+}
+
+document.querySelectorAll('.size').forEach(size => {
+  size.addEventListener('click', () => {
+    document.querySelectorAll('.size').forEach(s => s.classList.remove('active'));
+    size.classList.add('active');
+  });
+});
+
+// 🔥 PRODUCTOS KIDS
+
+const basePath = "assets/img/";
+
+const pants = [
+  { name: "Slim Pants", price: "95€", img: basePath + "pantalonswoman1.png" },
+  { name: "Wide Pants", price: "110€", img: basePath + "pantalonswoman2.png" },
+  { name: "Elegant Pants", price: "120€", img: basePath + "pantalonswoman3.png" }
+];
+
+const tops = [
+  { name: "Basic Top", price: "45€", img: basePath + "jerseiw1.png" },
+  { name: "Soft Knit", price: "60€", img: basePath + "jerseiw2.png" },
+  { name: "Elegant Shirt", price: "75€", img: basePath + "jerseiw3.png" }
+];
+
+const jackets = [
+  { name: "Classic Coat", price: "180€", img: basePath + "chaquetawoman1.png" },
+  { name: "Long Coat", price: "210€", img: basePath + "chaquetawoman2.png" },
+  { name: "Minimal Jacket", price: "170€", img: basePath + "chaquetawoman3.png" }
+];
+
+let current = 0;
+let currentCategory = pants;
+
+function updateProduct() {
+  const img = document.getElementById("product-img");
+
+  img.classList.add("fade");
+
+  setTimeout(() => {
+    img.src = currentCategory[current].img;
+    document.getElementById("product-name").textContent = currentCategory[current].name;
+    document.getElementById("product-price").textContent = currentCategory[current].price;
+
+    img.classList.remove("fade");
+  }, 200);
+}
+
+function next() {
+  current = (current + 1) % currentCategory.length;
+  updateProduct();
+}
+
+function prev() {
+  current = (current - 1 + currentCategory.length) % currentCategory.length;
+  updateProduct();
+}
+
+function showCategory(category) {
+  currentCategory = category;
+  current = 0;
+
+  document.getElementById("viewer").classList.remove("hidden");
+  updateProduct();
+}
+</script>
+
+</body>
+</html>
